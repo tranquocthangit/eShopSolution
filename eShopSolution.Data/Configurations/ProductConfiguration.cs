@@ -17,9 +17,9 @@ namespace eShopSolution.Data.Configurations
 
             builder.Property(x => x.Id).UseIdentityColumn();
 
-            builder.Property(x => x.Price).IsRequired();
+            builder.Property(x => x.Price).IsRequired().HasDefaultValue(0).HasColumnType("decimal(18,2)");
 
-            builder.Property(x => x.OriginalPrice).IsRequired();
+            builder.Property(x => x.OriginalPrice).IsRequired().HasDefaultValue(0).HasColumnType("decimal(18,2)");
 
             builder.Property(x => x.Stock).IsRequired().HasDefaultValue(0);
 
